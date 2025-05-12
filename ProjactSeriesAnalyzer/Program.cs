@@ -47,6 +47,25 @@ namespace ProjactSeriesAnalyzer
             }
             return numberFlagMin;
         }
+
+        /*
+         * a Method this calculate Average this array.
+         * @param: array of index Int
+         @return: int - the Average value of Array
+         */
+        static int MethodOfAverageValue(int[] arr)
+        {
+            int numberAverage = 0 , calculate = 0;
+            double cal = 0;
+
+            foreach (int i in arr)
+            {
+                numberAverage += i;
+            }
+            cal = numberAverage / (arr.Length);
+            calculate = Convert.ToInt32(cal);
+            return calculate;
+        }
         static void Main(string[] args)
         {
         }
