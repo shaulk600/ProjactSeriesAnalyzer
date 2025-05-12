@@ -27,6 +27,26 @@ namespace ProjactSeriesAnalyzer
             }
             return numberFlagMax;
         }
+
+        /*
+         * a Method this calculate value Min of array
+         * @param: array of index Int
+         @return: int - the Min value of Array
+         */
+        static int MethodOfMinValue(int[] arr)
+        {
+            int numberFlagMin = 0;
+
+            foreach (int i in arr)
+            {
+                int num = i;
+                if (num < numberFlagMin)
+                {
+                    numberFlagMin = num;
+                }
+            }
+            return numberFlagMin;
+        }
         static void Main(string[] args)
         {
         }
