@@ -23,8 +23,9 @@ namespace ProjactSeriesAnalyzer
 
         /*
          * a Method that checks if the input is empty or null.
+         * and check if the string input is typed integer.
          @param input: string
-            @return: void
+            @return: void - null
          */
         static void validationOfInput(string input)
         {
@@ -40,7 +41,7 @@ namespace ProjactSeriesAnalyzer
          @param input: string
             @return: Array of numbers.
          */
-        static Array changingNumbersToArrays(string input) 
+        static int[] changingNumbersToArrays(string input) 
         {
             string[] check = input.Split(' ');
             int[] numbers = new int[check.Length];
@@ -63,10 +64,28 @@ namespace ProjactSeriesAnalyzer
             }
             return numbers;
         }
-        static void getNumberSeries()
+        
+        /*
+         @param arr: Array of numbers
+        @return: true if all numbers are positive, false if any number is negative.
+         */
+        static bool getNumberSeries(int[] arr)
         {
-
+            // int[] arr = new int[10];
+            foreach (int i in arr)
+            {
+                if (i < 0)
+                {
+                    Console.WriteLine("Input must be positive.");
+                    return false;
+                }
+            }
+            return true;
         }
+
+        /*
+         Main method
+         */
         static void Main(string[] args)
         {
         }
