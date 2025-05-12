@@ -64,12 +64,13 @@ namespace ProjactSeriesAnalyzer
             }
             return numbers;
         }
-        
+
         /*
+         * a Method that checks if the array of numbers is positive.
          @param arr: Array of numbers
         @return: true if all numbers are positive, false if any number is negative.
          */
-        static bool getNumberSeries(int[] arr)
+        static bool getNumberSeriesIsPositive(int[] arr)
         {
             // int[] arr = new int[10];
             foreach (int i in arr)
