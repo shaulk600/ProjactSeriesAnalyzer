@@ -66,6 +66,16 @@ namespace ProjactSeriesAnalyzer
             calculate = Convert.ToInt32(cal);
             return calculate;
         }
+
+        /*
+         @param: array of index Int
+         @return: int - length of array
+        */
+        static int MethodOfAllIndex(int[] arr)
+        {
+            return arr.Length;
+        }
+
         static void Main(string[] args)
         {
         }
