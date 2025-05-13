@@ -9,6 +9,7 @@ namespace ProjactSeriesAnalyzer
 {
     internal class Program
     {
+        //מכאן menu
         /*
          * a Method Menu of the Projact Series Analyzer.
          @param : arr of string.
@@ -87,8 +88,11 @@ namespace ProjactSeriesAnalyzer
             
 
         }
-        /*
-         * a Method that takes a string of numbers received from the user.
+        // עד כאן menu
+
+        // enterValue-and-Validation  כאן 
+
+         /* a Method that takes a string of numbers received from the user.
          @param input: null
             @return: a string of numbers
          */
@@ -218,13 +222,9 @@ namespace ProjactSeriesAnalyzer
             }     
         }
 
-        //static void tstOfEnterValue()
-        //{
-        //}
+        
+        // enterValue-and-Validation עד כאן 
 
-        /*
-         Main method
-         */
         static void Main(string[] args)
         {
         }
