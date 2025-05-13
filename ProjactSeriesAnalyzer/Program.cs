@@ -140,14 +140,9 @@ namespace ProjactSeriesAnalyzer
             }     
         }
 
-        static void tstOfEnterValue()
-        {
-            int[] arr = { 0 };
-            arr = menuCheckingIfPositive("12 54 32");
-            if ((arr.Length == 1) && (arr[0] <= 0))//Error
-            { 
-            }
-        }
+        //static void tstOfEnterValue()
+        //{
+        //}
 
         /*
          Main method
