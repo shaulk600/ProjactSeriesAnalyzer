@@ -12,7 +12,7 @@ namespace ProjactSeriesAnalyzer
          * a Method Menu of the Projact Series Analyzer.
          @param : arr of string.
          */
-        static void nenu(string[] arr)
+        static void nenuDefult(string[] arr)
         {
             string choice = "";
 
@@ -54,6 +54,10 @@ namespace ProjactSeriesAnalyzer
                 case "j":
                     break;
             }
+        }
+        static void nenuMain()
+        {
+            
         }
         static void Main(string[] args)
         {
