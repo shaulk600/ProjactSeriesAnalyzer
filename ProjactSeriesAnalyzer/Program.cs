@@ -90,6 +90,17 @@ namespace ProjactSeriesAnalyzer
             return arr.Length;
         }
 
+        //static void tstOfCal()
+        //{
+        //    int[] arr = { 5, 4, 8, 3, 2 };
+        //    MethodOfAverageValue(arr);
+        //}
+
+        static void menuOfCalculate()
+        {
+            // G H I
+
+        }
         static void Main(string[] args)
         {
         }
