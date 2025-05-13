@@ -26,6 +26,7 @@ namespace ProjactSeriesAnalyzer
          */
         static void displayArr(int[] arr)
         {
+            addArraySort(arr);
             Console.Write("this array :");
             foreach (int i in arr)
             {
@@ -40,6 +41,7 @@ namespace ProjactSeriesAnalyzer
          */
         static void displayArrRevers(int[] arr)
         {
+            addArraySort(arr);
             Console.Write("this array :");
             for(int i = (arr.Length)-1; i >= 0; i--)
             {
@@ -50,9 +52,9 @@ namespace ProjactSeriesAnalyzer
         }
         //static void tstSort()
         //{
+           
         //    int[] arr = { 5, 7, 3, 1 };
-        //    int[] a = addArraySort(arr);
-        //    displayArrRevers(a);
+        //    menuOfSorted("e", arr);
         //}
 
         /*
@@ -67,6 +69,46 @@ namespace ProjactSeriesAnalyzer
             Array.Sort(arrSort);
             
             return arrSort;
+        }
+
+        /*
+         A guided method Sorted (Menu option D,E,F).
+        @param: 1. string of Menu, 2. array of numbers(int).
+         */
+        static void menuOfSorted(string txt , int[] arr) //2 Value
+        {
+            
+            //validetion
+            if(txt == null || txt == "")
+            {
+                return; //Error
+            }
+            else if ( (txt.ToLower() != "d") && (txt.ToLower() != "e") && (txt.ToLower() != "f"))
+            {
+                return; //Error
+            }
+            else 
+            {
+                if (txt.ToLower() == "d")
+                {
+                    // הצג את הסדרה בסדר ממוין(מהנמוך לגבוה).
+                    displayArr(arr);
+                }
+                else if (txt.ToLower() == "e")
+                {
+                    // הצג את הערך המקסימלי של הסדרה.
+                    int ressponse = MethodOfMaxValueOfSorted(arr);
+                    Console.WriteLine("this Max Value is: " + ressponse);
+                    return;
+                }
+                else if (txt.ToLower() == "f")
+                {
+                    // הצג את הערך המינימלי של הסדרה.
+                    int ressponse = MethodOfMinValueOfSorted(arr);
+                    Console.WriteLine("this Min Value is: " + ressponse);
+                    return;
+                }
+            }
         }
         static void Main(string[] args)
         {
