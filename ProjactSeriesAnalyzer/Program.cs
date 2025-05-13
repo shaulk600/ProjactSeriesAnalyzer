@@ -8,44 +8,60 @@ namespace ProjactSeriesAnalyzer
 {
     internal class Program
     {
+        ///*
+        // * a Method this calculate value Max of array
+        // * @param: array of index Int
+        // @return: int - the Max value of Array
+        // */
+        //static int MethodOfMaxValue(int[] arr)
+        //{
+        //    int numberFlagMax = 0;
+
+        //    foreach (int i in arr) 
+        //    {
+        //        int num = i;
+        //        if(num > numberFlagMax)
+        //        {
+        //            numberFlagMax = num;
+        //        }
+        //    }
+        //    return numberFlagMax;
+        //}
+
+        ///*
+        // * a Method this calculate value Min of array
+        // * @param: array of index Int
+        // @return: int - the Min value of Array
+        // */
+        //static int MethodOfMinValue(int[] arr)
+        //{
+        //    int numberFlagMin = 0;
+
+        //    foreach (int i in arr)
+        //    {
+        //        int num = i;
+        //        if (num < numberFlagMin)
+        //        {
+        //            numberFlagMin = num;
+        //        }
+        //    }
+        //    return numberFlagMin;
+        //}
+
         /*
-         * a Method this calculate value Max of array
+         * a Method this calculate sum this array.
          * @param: array of index Int
-         @return: int - the Max value of Array
+         @return: int - the sum value of Array
          */
-        static int MethodOfMaxValue(int[] arr)
+        static int MethodOfSumValue(int[] arr)
         {
-            int numberFlagMax = 0;
-
-            foreach (int i in arr) 
-            {
-                int num = i;
-                if(num > numberFlagMax)
-                {
-                    numberFlagMax = num;
-                }
-            }
-            return numberFlagMax;
-        }
-
-        /*
-         * a Method this calculate value Min of array
-         * @param: array of index Int
-         @return: int - the Min value of Array
-         */
-        static int MethodOfMinValue(int[] arr)
-        {
-            int numberFlagMin = 0;
-
+            int numberSum = 0;
+            
             foreach (int i in arr)
             {
-                int num = i;
-                if (num < numberFlagMin)
-                {
-                    numberFlagMin = num;
-                }
+                numberSum += i;
             }
-            return numberFlagMin;
+            return numberSum;
         }
 
         /*
@@ -55,14 +71,12 @@ namespace ProjactSeriesAnalyzer
          */
         static int MethodOfAverageValue(int[] arr)
         {
-            int numberAverage = 0 , calculate = 0;
+            int sum = 0, calculate = 0;
             double cal = 0;
+            
+            sum = MethodOfSumValue(arr);
 
-            foreach (int i in arr)
-            {
-                numberAverage += i;
-            }
-            cal = numberAverage / (arr.Length);
+            cal = sum / (arr.Length);
             calculate = Convert.ToInt32(cal);
             return calculate;
         }
