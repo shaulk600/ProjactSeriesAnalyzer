@@ -22,12 +22,28 @@ namespace ProjactSeriesAnalyzer
             }
             Console.WriteLine(' ');
         }
+        /*
+         a Method that print of array - Revers!
+        @param : array
+        @return :  = print of Console.
+         */
+        static void displayArrRevers(int[] arr)
+        {
+            Console.Write("this array :");
+            for(int i = (arr.Length)-1; i >= 0; i--)
+            {
+                Console.Write(arr[i]);
+            }
+            Console.WriteLine(' ');
+            
+        }
         //static void tstSort()
         //{
-        //    int[]arr = {5,7,3,1};
+        //    int[] arr = { 5, 7, 3, 1 };
         //    int[] a = addArraySort(arr);
+        //    displayArrRevers(a);
         //}
-        
+
         /*
          a Method that Sorted of array
         @param : array
