@@ -12,7 +12,7 @@ namespace ProjactSeriesAnalyzer
          * a Method Menu of the Projact Series Analyzer.
          @param : arr of string.
          */
-        static void nenuDefult(string[] arr)
+        static string nenuDefult()
         {
             string choice = "";
 
@@ -31,33 +31,40 @@ namespace ProjactSeriesAnalyzer
             
             choice = Console.ReadLine();
 
-            switch (choice) 
-            {
-                case "a":
-                    break;
-                case "b":
-                    break;
-                case "c":
-                    break;
-                case "d":
-                    break;
-                case "e":
-                    break;
-                case "f":
-                    break;
-                case "g":
-                    break;
-                case "h":
-                    break;
-                case "i":
-                    break;
-                case "j":
-                    break;
-            }
+            //switch (choice) 
+            //{
+            //    case "a":
+            //        break;
+            //    case "b":
+            //        break;
+            //    case "c":
+            //        break;
+            //    case "d":
+            //        break;
+            //    case "e":
+            //        break;
+            //    case "f":
+            //        break;
+            //    case "g":
+            //        break;
+            //    case "h":
+            //        break;
+            //    case "i":
+            //        break;
+            //    case "j":
+            //        break;
+            //}
+            return choice;
         }
         static void nenuMain()
         {
-            
+            //input request
+            string returnString;
+            string returnMenu;
+            returnString = menuInputIsNotEmpty("");
+            //Selection menu
+            returnMenu = nenuDefult();
+
         }
         static void Main(string[] args)
         {
