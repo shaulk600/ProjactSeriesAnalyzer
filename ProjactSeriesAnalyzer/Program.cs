@@ -93,13 +93,46 @@ namespace ProjactSeriesAnalyzer
         //static void tstOfCal()
         //{
         //    int[] arr = { 5, 4, 8, 3, 2 };
-        //    MethodOfAverageValue(arr);
+        //    menuOfCalculate("h", arr);
         //}
 
-        static void menuOfCalculate()
+        static void menuOfCalculate(string txt, int[] arr) //2 Value
         {
             // G H I
-
+            txt = txt.ToLower();
+            //validetion
+            if (txt == null || txt == "")
+            {
+                return; //Error
+            }
+            else if ((txt.ToLower() != "g") && (txt.ToLower() != "h") && (txt.ToLower() != "i"))
+            {
+                return; //Error
+            }
+            else
+            {
+                if (txt.ToLower() == "g")
+                {
+                    //הצג את הממוצע של הסדרה.
+                    int sum = MethodOfAverageValue(arr);
+                    Console.WriteLine("this Average is: " + sum);
+                    return;
+                }
+                else if (txt.ToLower() == "h")
+                {
+                    // הצג את מספר האיברים בסדרה.
+                    int sum = MethodOfAllIndex(arr);
+                    Console.WriteLine("this index of Array is: " + sum);
+                    return;
+                }
+                else if (txt.ToLower() == "h")
+                {
+                    //הצג את סכום הסדרה.
+                    int sum = MethodOfSumValue(arr);
+                    Console.WriteLine("this sum of Array is: " + sum);
+                    return;
+                }
+            }//end validetion
         }
         static void Main(string[] args)
         {
