@@ -8,6 +8,17 @@ namespace ProjactSeriesAnalyzer
 {
     internal class Program
     {
+        static int MethodOfMaxValueOfSorted(int[] arr)
+        {
+            addArraySort(arr);
+            return arr[(arr.Length)-1];
+        }
+        static int MethodOfMinValueOfSorted(int[] arr)
+        {
+            addArraySort(arr);
+            return (arr[0]);
+        }
+
         /*
          a Method that print of array
         @param : array
