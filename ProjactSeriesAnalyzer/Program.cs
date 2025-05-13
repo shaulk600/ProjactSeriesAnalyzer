@@ -21,27 +21,37 @@ namespace ProjactSeriesAnalyzer
 
         /*
          a Method that print of array
+        if flag is true, array is Sort
         @param : array
         @return :  = print of Console.
          */
-        static void displayArr(int[] arr)
+        static void displayArr(int[] arr, bool flag = false)
         {
-            addArraySort(arr);
+            if (flag)//sort
+            {
+                addArraySort(arr);
+            }
+
             Console.Write("this array :");
             foreach (int i in arr)
             {
                 Console.Write(i);
             }
             Console.WriteLine(' ');
+            return;
         }
         /*
          a Method that print of array - Revers!
+        if flag is true, array is Sort
         @param : array
         @return :  = print of Console.
          */
-        static void displayArrRevers(int[] arr)
+        static void displayArrRevers(int[] arr, bool flag = false)
         {
-            addArraySort(arr);
+            if (flag)//sort
+            {
+                addArraySort(arr);
+            }
             Console.Write("this array :");
             for(int i = (arr.Length)-1; i >= 0; i--)
             {
@@ -77,11 +87,24 @@ namespace ProjactSeriesAnalyzer
          */
         static void menuOfSorted(string txt , int[] arr) //2 Value
         {
-            
+            txt = txt.ToLower();
             //validetion
             if(txt == null || txt == "")
             {
                 return; //Error
+            }
+            else if ((txt == "b") && (txt == "c"))
+            {
+                if (txt == "b")
+                {
+                    displayArr(arr);
+                    return;
+                }
+                if (txt == "c")
+                {
+                    displayArrRevers(arr);
+                    return;
+                }
             }
             else if ( (txt.ToLower() != "d") && (txt.ToLower() != "e") && (txt.ToLower() != "f"))
             {
@@ -92,7 +115,8 @@ namespace ProjactSeriesAnalyzer
                 if (txt.ToLower() == "d")
                 {
                     // הצג את הסדרה בסדר ממוין(מהנמוך לגבוה).
-                    displayArr(arr);
+                    displayArr(arr,true);
+                        return;
                 }
                 else if (txt.ToLower() == "e")
                 {
