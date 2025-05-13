@@ -39,6 +39,7 @@ namespace ProjactSeriesAnalyzer
             foreach (int i in arr)
             {
                 Console.Write(i);
+                Console.Write(",");
             }
             Console.WriteLine(' ');
             return;
@@ -59,16 +60,12 @@ namespace ProjactSeriesAnalyzer
             for(int i = (arr.Length)-1; i >= 0; i--)
             {
                 Console.Write(arr[i]);
+                Console.Write(",");
             }
             Console.WriteLine(' ');
             
         }
-        //static void tstSort()
-        //{
-           
-        //    int[] arr = { 5, 7, 3, 1 };
-        //    menuOfSorted("e", arr);
-        //}
+        
 
         /*
          a Method that Sorted of array
@@ -96,7 +93,7 @@ namespace ProjactSeriesAnalyzer
             {
                 return; //Error
             }
-            else if ((txt == "b") && (txt == "c"))
+            if ((txt == "b") || (txt == "c"))
             {
                 if (txt == "b")
                 {
@@ -238,7 +235,7 @@ namespace ProjactSeriesAnalyzer
             {
                 return; //Error
             }
-            else if ((txt.ToLower() != "g") && (txt.ToLower() != "h") && (txt.ToLower() != "i"))
+            else if ((txt != "g") && (txt != "h") && (txt != "i"))
             {
                 return; //Error
             }
@@ -258,7 +255,7 @@ namespace ProjactSeriesAnalyzer
                     Console.WriteLine("this index of Array is: " + sum);
                     return;
                 }
-                else if (txt.ToLower() == "h")
+                else if (txt.ToLower() == "i")
                 {
                     //הצג את סכום הסדרה.
                     int sum = MethodOfSumValue(arr);
@@ -310,7 +307,7 @@ namespace ProjactSeriesAnalyzer
             {
                 value = getInputNumbers();
             }
-            return input;
+            return value;
         }
 
 
@@ -322,17 +319,21 @@ namespace ProjactSeriesAnalyzer
          */
         static int[] changingNumbersToArrays(string input) 
         {
-            if(!validationOfInputIsNoEmpty(input))
+            if(! validationOfInputIsNoEmpty(input))
             {
                 int[] empty = { -1 }; //flag for empty array.
                 return empty;
             }
             string[] check = input.Split(' ');
-            int[] numbers = new int[check.Length];
+            int[] numbers = new int[check.Length]; //בבדיקה - הוא נהיה פתאום 3
 
             for (int i = 0; i < check.Length; i++)
             {
                 int num = 0;
+                
+                if (check[i] == "")
+                    continue;
+                
                 bool isTypeInt = int.TryParse(check[i], out num);
                 if (isTypeInt)
                 {
@@ -454,8 +455,25 @@ namespace ProjactSeriesAnalyzer
         }
 
         /**/
-        static void nenuMain(string input)
+        static void menuChoice(string choice, int[] arr)
         {
+            if(choice == "g" || choice == "h" || choice == "i")
+            {
+                menuOfCalculate(choice, arr);
+            }
+            else if (choice == "b" || choice == "c" || choice == "d" || choice == "e" || choice == "f")
+                    {
+                        menuOfSorted(choice, arr);
+                    }
+               
+            choice = "";
+            return;
+        }
+
+        /**/
+        static void nenuMain(string[] args)
+        {
+            string input = listToString(args);
             bool flag = true;
             while (flag)
             {
@@ -467,10 +485,17 @@ namespace ProjactSeriesAnalyzer
                 //Selection menu
                 returnMenu = nenuDefult();
                 returnMenu = returnMenu.ToLower();
+
+                if (returnMenu == "a")
+                {
+                    returnString = "";
+                    continue;
+                }
                 //בדיקת יציאה
                 if (returnMenu == "j")
                 {
                     flag = false;
+                    continue;
                 }
 
                 //בדיקת ערך תקין בערך שהוכנס
@@ -478,14 +503,35 @@ namespace ProjactSeriesAnalyzer
                 arr = menuCheckingIfPositive(returnString);
                 if ((arr.Length == 1) && (arr[0] <= 0))//Error
                 {
+                    returnString = "";
+                    returnMenu = "";
                     continue;
                 }
+                menuChoice(returnMenu, arr);
+                returnMenu = "";
             }
         }
         // Branch "menu" end
+        static string listToString(string[] args)
+        {
+            string returnString = "";
+            List<string> arg = new List<string>();
+            foreach (string i in args)
+            {
+                arg.Add(i);
+            }
+            
+            foreach(string i in arg)
+            {
+                returnString += i;
+                returnString += " ";
+            }
+            return returnString;
+        }
 
         static void Main(string[] args)
         {
+            nenuMain(args);
         }
     }
 }
