@@ -142,8 +142,11 @@ namespace ProjactSeriesAnalyzer
 
         static void tstOfEnterValue()
         {
-            string returnString;
-            returnString = menuInputIsNotEmpty("");
+            int[] arr = { 0 };
+            arr = menuCheckingIfPositive("12 54 32");
+            if ((arr.Length == 1) && (arr[0] <= 0))//Error
+            { 
+            }
         }
 
         /*
@@ -151,7 +154,6 @@ namespace ProjactSeriesAnalyzer
          */
         static void Main(string[] args)
         {
-            tstOfEnterValue();
         }
     }
 }
