@@ -56,14 +56,34 @@ namespace ProjactSeriesAnalyzer
             //}
             return choice;
         }
-        static void nenuMain()
+        static void nenuMain(string input)
         {
-            //input request
-            string returnString;
-            string returnMenu;
-            returnString = menuInputIsNotEmpty("");
-            //Selection menu
-            returnMenu = nenuDefult();
+            bool flag = true;
+            while (flag)
+            {
+                //input request
+                string returnString;
+                string returnMenu;
+                returnString = menuInputIsNotEmpty(input);
+
+                //Selection menu
+                returnMenu = nenuDefult();
+                returnMenu = returnMenu.ToLower();
+                //בדיקת יציאה
+                if(returnMenu == "j")
+                {
+                    flag = false;
+                }
+
+                //בדיקת ערך תקין בערך שהוכנס
+                int[] arr = { 0 };
+                arr = menuCheckingIfPositive(returnString);
+                if ((arr.Length == 1) && (arr[0] <= 0))//Error
+                {
+                    continue;
+                }
+            }
+            
 
         }
         static void Main(string[] args)
